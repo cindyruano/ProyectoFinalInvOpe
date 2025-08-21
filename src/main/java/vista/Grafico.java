@@ -35,19 +35,31 @@ public class Grafico extends javax.swing.JPanel {
         setBackground(new java.awt.Color(33, 48, 71));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(230, 230, 230));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 30, -1, -1));
+        jLabel1.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Maximizar");
+        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(102, 102, 102), null));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 40));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 240, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 250, 40));
 
+        jPanel2.setBackground(new java.awt.Color(230, 230, 230));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("jLabel2");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 41, -1, -1));
+        jLabel2.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Minimizar");
+        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(102, 102, 102), null));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 40));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 240, -1));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 250, 40));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 

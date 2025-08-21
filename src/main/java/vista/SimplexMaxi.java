@@ -28,21 +28,21 @@ public class SimplexMaxi extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtEX1 = new javax.swing.JTextField();
+        txtEX2 = new javax.swing.JTextField();
+        txtX3 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
+        txtRX1 = new javax.swing.JTextField();
+        txtRX2 = new javax.swing.JTextField();
+        txtRY1 = new javax.swing.JTextField();
+        txtRY2 = new javax.swing.JTextField();
+        txtRS3 = new javax.swing.JTextField();
+        txtRS1 = new javax.swing.JTextField();
+        txtRS2 = new javax.swing.JTextField();
+        txtRZ3 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -50,12 +50,12 @@ public class SimplexMaxi extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
+        txtRZ1 = new javax.swing.JTextField();
+        txtRZ2 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        btnResolver = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
@@ -67,25 +67,20 @@ public class SimplexMaxi extends javax.swing.JPanel {
         setBackground(new java.awt.Color(230, 230, 230));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("MÉTODO SIMPLEX MAXIMIZACIÓN");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("Ecuación:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtEX1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtEX1ActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 50, -1));
-
-        jTextField2.setText("jTextField2");
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 60, -1));
-
-        jTextField3.setText("jTextField3");
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, -1, -1));
+        add(txtEX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 50, -1));
+        add(txtEX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 60, -1));
+        add(txtX3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, -1, -1));
 
         jLabel3.setText("X1");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
@@ -96,57 +91,46 @@ public class SimplexMaxi extends javax.swing.JPanel {
         jLabel5.setText("X3");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
 
-        jLabel6.setText("jLabel6");
+        jLabel6.setText("Restricciones");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 60, -1, 20));
+        add(txtRX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 90, 40, -1));
+        add(txtRX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 40, -1));
 
-        jTextField4.setText("jTextField4");
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 90, 40, -1));
-
-        jTextField5.setText("jTextField5");
-        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 40, -1));
-
-        jTextField7.setText("jTextField7");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        txtRY1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                txtRY1ActionPerformed(evt);
             }
         });
-        add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 90, 50, -1));
+        add(txtRY1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 90, 50, -1));
+        add(txtRY2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 120, 50, -1));
 
-        jTextField8.setText("jTextField8");
-        add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 120, 50, -1));
-
-        jTextField9.setText("jTextField9");
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        txtRS3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                txtRS3ActionPerformed(evt);
             }
         });
-        add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 150, 50, -1));
+        add(txtRS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 150, 50, -1));
 
-        jTextField10.setText("jTextField10");
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        txtRS1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                txtRS1ActionPerformed(evt);
             }
         });
-        add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, 50, -1));
+        add(txtRS1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, 50, -1));
 
-        jTextField11.setText("jTextField11");
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        txtRS2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                txtRS2ActionPerformed(evt);
             }
         });
-        add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 120, 50, -1));
+        add(txtRS2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 120, 50, -1));
 
-        jTextField12.setText("jTextField12");
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        txtRZ3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                txtRZ3ActionPerformed(evt);
             }
         });
-        add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 160, 50, 20));
+        add(txtRZ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 160, 50, 20));
 
         jLabel7.setText("X");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 90, -1, -1));
@@ -168,12 +152,8 @@ public class SimplexMaxi extends javax.swing.JPanel {
 
         jLabel13.setText("+");
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, -1, -1));
-
-        jTextField13.setText("jTextField13");
-        add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 90, 50, -1));
-
-        jTextField14.setText("jTextField14");
-        add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 120, 50, -1));
+        add(txtRZ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 90, 50, -1));
+        add(txtRZ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 120, 50, -1));
 
         jLabel14.setText("+");
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 20, -1));
@@ -181,11 +161,11 @@ public class SimplexMaxi extends javax.swing.JPanel {
         jLabel15.setText("+");
         add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 20, -1));
 
-        jButton1.setText("LIMPIAR");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
+        btnLimpiar.setText("LIMPIAR");
+        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
 
-        jButton2.setText("RESOLVER");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, -1, -1));
+        btnResolver.setText("RESOLVER");
+        add(btnResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -218,34 +198,34 @@ public class SimplexMaxi extends javax.swing.JPanel {
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 540, 130, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtEX1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEX1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtEX1ActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void txtRS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRS3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_txtRS3ActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void txtRS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRS2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_txtRS2ActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void txtRY1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRY1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_txtRY1ActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void txtRS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRS1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_txtRS1ActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void txtRZ3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRZ3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_txtRZ3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnResolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -268,18 +248,18 @@ public class SimplexMaxi extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField txtEX1;
+    private javax.swing.JTextField txtEX2;
+    private javax.swing.JTextField txtRS1;
+    private javax.swing.JTextField txtRS2;
+    private javax.swing.JTextField txtRS3;
+    private javax.swing.JTextField txtRX1;
+    private javax.swing.JTextField txtRX2;
+    private javax.swing.JTextField txtRY1;
+    private javax.swing.JTextField txtRY2;
+    private javax.swing.JTextField txtRZ1;
+    private javax.swing.JTextField txtRZ2;
+    private javax.swing.JTextField txtRZ3;
+    private javax.swing.JTextField txtX3;
     // End of variables declaration//GEN-END:variables
 }

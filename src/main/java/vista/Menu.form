@@ -165,11 +165,11 @@
                   <Color blue="e6" green="e6" red="e6" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="&#x27a1;&#xfe0f;"/>
+                <Property name="text" type="java.lang.String" value="&#x27a4;"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="50" y="0" width="40" height="40"/>
+                  <AbsoluteConstraints x="50" y="0" width="30" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -226,11 +226,11 @@
                   <Color blue="e6" green="e6" red="e6" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="&#x27a1;&#xfe0f;"/>
+                <Property name="text" type="java.lang.String" value="&#x27a4;"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="40" y="0" width="50" height="40"/>
+                  <AbsoluteConstraints x="40" y="0" width="40" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>

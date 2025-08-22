@@ -213,8 +213,8 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel1.setForeground(new java.awt.Color(230, 230, 230));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setText("➡️");
-        btnGrafico.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 40, 40));
+        jLabel1.setText("➤");
+        btnGrafico.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 30, 40));
 
         jPanel1.add(btnGrafico, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 310, 40));
 
@@ -232,8 +232,8 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(230, 230, 230));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("➡️");
-        btnSimplex.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 50, 40));
+        jLabel2.setText("➤");
+        btnSimplex.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 40, 40));
 
         jPanel1.add(btnSimplex, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 310, 40));
 

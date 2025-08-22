@@ -28,47 +28,23 @@ public class MetodoGrafico extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         txtEX = new javax.swing.JTextField();
         txtEY = new javax.swing.JTextField();
         txtRX1 = new javax.swing.JTextField();
-        txtRY1 = new javax.swing.JTextField();
-        txtRZ1 = new javax.swing.JTextField();
-        txtRS1 = new javax.swing.JTextField();
         txtRX2 = new javax.swing.JTextField();
-        txtRY2 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        txtRS2 = new javax.swing.JTextField();
+        txtRZ1 = new javax.swing.JTextField();
         txtRZ2 = new javax.swing.JTextField();
-        txtRS3 = new javax.swing.JTextField();
         txtRZ3 = new javax.swing.JTextField();
+        txtRS1 = new javax.swing.JTextField();
+        txtRS2 = new javax.swing.JTextField();
+        txtRS3 = new javax.swing.JTextField();
+        txtRY1 = new javax.swing.JTextField();
+        txtRY2 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
         btnMinimizar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        txtPX1 = new javax.swing.JTextField();
-        txtPX2 = new javax.swing.JTextField();
-        txtPX3 = new javax.swing.JTextField();
-        txtPX4 = new javax.swing.JTextField();
-        txtPY1 = new javax.swing.JTextField();
-        txtPY2 = new javax.swing.JTextField();
-        txtPY3 = new javax.swing.JTextField();
-        txtPY4 = new javax.swing.JTextField();
-        txtPZ1 = new javax.swing.JTextField();
-        txtPZ2 = new javax.swing.JTextField();
-        txtPZ3 = new javax.swing.JTextField();
-        txtPZ4 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         txtRespuesta = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
@@ -77,66 +53,112 @@ public class MetodoGrafico extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblPuntosIn = new javax.swing.JTable();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(230, 230, 230));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(33, 48, 71));
-        jLabel1.setText("Ecuación:");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+        jLabel1.setText("Ecuación");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(33, 48, 71));
         jLabel2.setText("MÉTODO GRÁFICO ");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, 25));
-
-        jLabel3.setText("X");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, 25));
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Restricciones");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 60, 270, -1));
 
-        jLabel5.setText("+");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, -1, -1));
+        txtEX.setBackground(new java.awt.Color(204, 204, 204));
+        txtEX.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtEX.setForeground(new java.awt.Color(33, 48, 71));
+        txtEX.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(txtEX, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 50, 25));
 
-        jLabel6.setText("X");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 10, -1));
-        add(txtEX, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 50, -1));
-        add(txtEY, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 60, -1));
-        add(txtRX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 130, 50, -1));
-        add(txtRY1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 40, -1));
-        add(txtRZ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 130, 60, -1));
-        add(txtRS1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 130, 60, -1));
-        add(txtRX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 50, -1));
-        add(txtRY2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, 40, -1));
+        txtEY.setBackground(new java.awt.Color(204, 204, 204));
+        txtEY.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtEY.setForeground(new java.awt.Color(33, 48, 71));
+        txtEY.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(txtEY, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 50, 25));
 
-        jLabel7.setText("X");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, -1, -1));
+        txtRX1.setBackground(new java.awt.Color(204, 204, 204));
+        txtRX1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtRX1.setForeground(new java.awt.Color(33, 48, 71));
+        txtRX1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(txtRX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 90, 50, -1));
 
-        jLabel8.setText("Y");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 20, -1));
+        txtRX2.setBackground(new java.awt.Color(204, 204, 204));
+        txtRX2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtRX2.setForeground(new java.awt.Color(33, 48, 71));
+        txtRX2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(txtRX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, 50, -1));
 
-        jLabel9.setText("+");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 20, 20));
+        txtRZ1.setBackground(new java.awt.Color(204, 204, 204));
+        txtRZ1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtRZ1.setForeground(new java.awt.Color(33, 48, 71));
+        txtRZ1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(txtRZ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 90, 50, -1));
 
-        jLabel10.setText("Y");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 10, -1));
+        txtRZ2.setBackground(new java.awt.Color(204, 204, 204));
+        txtRZ2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtRZ2.setForeground(new java.awt.Color(33, 48, 71));
+        txtRZ2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(txtRZ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 120, 50, -1));
 
-        jLabel11.setText("+");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, 10, -1));
+        txtRZ3.setBackground(new java.awt.Color(204, 204, 204));
+        txtRZ3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtRZ3.setForeground(new java.awt.Color(33, 48, 71));
+        txtRZ3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(txtRZ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 150, 50, -1));
 
-        jLabel12.setText("Y");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 170, 10, -1));
+        txtRS1.setBackground(new java.awt.Color(204, 204, 204));
+        txtRS1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtRS1.setForeground(new java.awt.Color(33, 48, 71));
+        txtRS1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(txtRS1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 90, 30, -1));
 
-        jLabel13.setText("X , Y");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 200, -1, -1));
-        add(txtRS2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 170, 60, -1));
-        add(txtRZ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, 60, -1));
-        add(txtRS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 60, -1));
-        add(txtRZ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 200, 60, -1));
+        txtRS2.setBackground(new java.awt.Color(204, 204, 204));
+        txtRS2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtRS2.setForeground(new java.awt.Color(33, 48, 71));
+        txtRS2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(txtRS2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 120, 30, -1));
+
+        txtRS3.setBackground(new java.awt.Color(204, 204, 204));
+        txtRS3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtRS3.setForeground(new java.awt.Color(33, 48, 71));
+        txtRS3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(txtRS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 150, 30, -1));
+
+        txtRY1.setBackground(new java.awt.Color(204, 204, 204));
+        txtRY1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtRY1.setForeground(new java.awt.Color(33, 48, 71));
+        txtRY1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(txtRY1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 90, 50, -1));
+
+        txtRY2.setBackground(new java.awt.Color(204, 204, 204));
+        txtRY2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtRY2.setForeground(new java.awt.Color(33, 48, 71));
+        txtRY2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(txtRY2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 120, 50, -1));
+
+        jLabel10.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel10.setText("+");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 10, -1));
 
         btnMinimizar.setBackground(new java.awt.Color(204, 204, 204));
         btnMinimizar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -149,7 +171,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
                 btnMinimizarActionPerformed(evt);
             }
         });
-        add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 100, 30));
+        add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 100, 30));
 
         btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
         btnLimpiar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -162,58 +184,23 @@ public class MetodoGrafico extends javax.swing.JPanel {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 100, 30));
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 550, 410));
-
-        jLabel14.setText("X");
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 290, -1, -1));
-
-        jLabel15.setText("Y");
-        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 290, -1, -1));
-
-        jLabel16.setText("Z");
-        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, -1, -1));
-        add(txtPX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 320, 50, -1));
-        add(txtPX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 350, 50, -1));
-        add(txtPX3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 390, 50, -1));
-        add(txtPX4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 430, 50, -1));
-
-        txtPY1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPY1ActionPerformed(evt);
-            }
-        });
-        add(txtPY1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 320, 50, -1));
-        add(txtPY2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 350, 50, -1));
-
-        txtPY3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPY3ActionPerformed(evt);
-            }
-        });
-        add(txtPY3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 390, 50, -1));
-
-        txtPY4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPY4ActionPerformed(evt);
-            }
-        });
-        add(txtPY4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, 50, -1));
-        add(txtPZ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 320, 50, -1));
-        add(txtPZ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 350, 50, -1));
-        add(txtPZ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 390, 50, -1));
-        add(txtPZ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 430, 50, -1));
+        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, 100, 30));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 590, 470));
 
         jLabel17.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(33, 48, 71));
         jLabel17.setText("RESPUESTA");
-        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 510, -1, -1));
-        add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 540, 190, -1));
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, -1, -1));
+
+        txtRespuesta.setBackground(new java.awt.Color(204, 204, 204));
+        txtRespuesta.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtRespuesta.setForeground(new java.awt.Color(33, 48, 71));
+        add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 190, -1));
 
         jLabel18.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(33, 48, 71));
         jLabel18.setText("Puntos de Intersección");
-        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, -1, -1));
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 220, -1, -1));
 
         btnMaximizar.setBackground(new java.awt.Color(204, 204, 204));
         btnMaximizar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -226,13 +213,14 @@ public class MetodoGrafico extends javax.swing.JPanel {
                 btnMaximizarActionPerformed(evt);
             }
         });
-        add(btnMaximizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 100, 30));
+        add(btnMaximizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 100, 30));
 
         txtTipo.setBackground(new java.awt.Color(230, 230, 230));
-        txtTipo.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        txtTipo.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
         txtTipo.setForeground(new java.awt.Color(33, 48, 71));
+        txtTipo.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtTipo.setBorder(null);
-        add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 130, 25));
+        add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 190, 25));
 
         jSeparator1.setBackground(new java.awt.Color(33, 48, 71));
         jSeparator1.setForeground(new java.awt.Color(33, 48, 71));
@@ -248,24 +236,69 @@ public class MetodoGrafico extends javax.swing.JPanel {
         jSeparator3.setForeground(new java.awt.Color(33, 48, 71));
         jSeparator3.setOpaque(true);
         add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(942, -7, 2, 700));
+
+        tblPuntosIn.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "X", "Y", "Z"
+            }
+        ));
+        jScrollPane1.setViewportView(tblPuntosIn);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 190, 190));
+
+        jLabel14.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel14.setText("Y");
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 20, 25));
+
+        jLabel15.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel15.setText("Y");
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 120, 10, -1));
+
+        jLabel16.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel16.setText("X , Y");
+        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 150, 30, -1));
+
+        jLabel19.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel19.setText("+");
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, 10, -1));
+
+        jLabel20.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel20.setText("Y");
+        add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 90, 10, -1));
+
+        jLabel21.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel21.setText("X");
+        add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 10, -1));
+
+        jLabel22.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel22.setText("X");
+        add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, 10, -1));
+
+        jLabel23.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel23.setText("X   +");
+        add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 50, 25));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtPY1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPY1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPY1ActionPerformed
-
-    private void txtPY3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPY3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPY3ActionPerformed
-
-    private void txtPY4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPY4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPY4ActionPerformed
-
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        //ECUACION
         txtEX.setText("");
         txtEY.setText("");
 
+        //RESTRICCIONES
         txtRX1.setText("");
         txtRX2.setText("");
         txtRY1.setText("");
@@ -277,24 +310,38 @@ public class MetodoGrafico extends javax.swing.JPanel {
         txtRZ2.setText("");
         txtRZ3.setText("");
 
-        txtPX1.setText("");
-        txtPX2.setText("");
-        txtPX3.setText("");
-        txtPX4.setText("");
-        txtPY1.setText("");
-        txtPY2.setText("");
-        txtPY3.setText("");
-        txtPY4.setText("");
-        txtPZ1.setText("");
-        txtPZ2.setText("");
-        txtPZ3.setText("");
-        txtPZ4.setText("");
-
+        //RESPUESTA
         txtRespuesta.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
         txtTipo.setText(" - MINIMIZAR");
+
+        // Leer valores de los JTextField
+        String ex = txtEX.getText();
+        String ey = txtEY.getText();
+
+        // Inicializamos variables para mínimo
+        double minZ = Double.MAX_VALUE;
+        Object xMin = null;
+        Object yMin = null;
+
+        // Recorremos la tabla
+        for (int i = 0; i < tblPuntosIn.getRowCount(); i++) {
+            Object zObj = tblPuntosIn.getValueAt(i, 2); // columna z
+            if (zObj != null) {
+                double z = Double.parseDouble(zObj.toString());
+                if (z < minZ) {
+                    minZ = z;
+                    xMin = tblPuntosIn.getValueAt(i, 0); // columna x
+                    yMin = tblPuntosIn.getValueAt(i, 1); // columna y
+                }
+            }
+        }
+
+        // Construimos el resultado
+        String resultado = ex + " (" + xMin + ") + " + ey + " (" + yMin + ")";
+        txtRespuesta.setText(resultado);
     }//GEN-LAST:event_btnMinimizarActionPerformed
 
     private void btnMaximizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaximizarActionPerformed
@@ -308,40 +355,26 @@ public class MetodoGrafico extends javax.swing.JPanel {
     private javax.swing.JButton btnMinimizar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTable tblPuntosIn;
     private javax.swing.JTextField txtEX;
     private javax.swing.JTextField txtEY;
-    private javax.swing.JTextField txtPX1;
-    private javax.swing.JTextField txtPX2;
-    private javax.swing.JTextField txtPX3;
-    private javax.swing.JTextField txtPX4;
-    private javax.swing.JTextField txtPY1;
-    private javax.swing.JTextField txtPY2;
-    private javax.swing.JTextField txtPY3;
-    private javax.swing.JTextField txtPY4;
-    private javax.swing.JTextField txtPZ1;
-    private javax.swing.JTextField txtPZ2;
-    private javax.swing.JTextField txtPZ3;
-    private javax.swing.JTextField txtPZ4;
     private javax.swing.JTextField txtRS1;
     private javax.swing.JTextField txtRS2;
     private javax.swing.JTextField txtRS3;

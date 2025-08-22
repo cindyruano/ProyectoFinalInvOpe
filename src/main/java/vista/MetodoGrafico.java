@@ -8,12 +8,12 @@ package vista;
  *
  * @author cindy
  */
-public class GraficaMaxi extends javax.swing.JPanel {
+public class MetodoGrafico extends javax.swing.JPanel {
 
     /**
      * Creates new form GraficaMaxi
      */
-    public GraficaMaxi() {
+    public MetodoGrafico() {
         initComponents();
     }
 
@@ -51,7 +51,7 @@ public class GraficaMaxi extends javax.swing.JPanel {
         txtRZ2 = new javax.swing.JTextField();
         txtRS3 = new javax.swing.JTextField();
         txtRZ3 = new javax.swing.JTextField();
-        btnResolver = new javax.swing.JButton();
+        btnMinimizar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -72,28 +72,39 @@ public class GraficaMaxi extends javax.swing.JPanel {
         jLabel17 = new javax.swing.JLabel();
         txtRespuesta = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
+        btnMaximizar = new javax.swing.JButton();
+        txtTipo = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(230, 230, 230));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(33, 48, 71));
         jLabel1.setText("Ecuación:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
-        jLabel2.setText("MÉTODO GRÁFICO MAXIMIZADO");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel2.setText("MÉTODO GRÁFICO ");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, 25));
 
         jLabel3.setText("X");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(33, 48, 71));
         jLabel4.setText("Restricciones");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, -1, -1));
 
         jLabel5.setText("+");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, -1, -1));
 
         jLabel6.setText("X");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 10, -1));
-        add(txtEX, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, -1, -1));
+        add(txtEX, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 50, -1));
         add(txtEY, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 60, -1));
         add(txtRX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 130, 50, -1));
         add(txtRY1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 40, -1));
@@ -127,17 +138,32 @@ public class GraficaMaxi extends javax.swing.JPanel {
         add(txtRS3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 60, -1));
         add(txtRZ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 200, 60, -1));
 
-        btnResolver.setText("RESOLVER");
-        add(btnResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, -1, -1));
+        btnMinimizar.setBackground(new java.awt.Color(204, 204, 204));
+        btnMinimizar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        btnMinimizar.setForeground(new java.awt.Color(33, 48, 71));
+        btnMinimizar.setText("MINIMIZAR");
+        btnMinimizar.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(33, 48, 71), null));
+        btnMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMinimizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMinimizarActionPerformed(evt);
+            }
+        });
+        add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 100, 30));
 
+        btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
+        btnLimpiar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(33, 48, 71));
         btnLimpiar.setText("LIMPIAR");
+        btnLimpiar.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(33, 48, 71), null));
+        btnLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 550, 450));
+        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 100, 30));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 550, 410));
 
         jLabel14.setText("X");
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 290, -1, -1));
@@ -178,12 +204,50 @@ public class GraficaMaxi extends javax.swing.JPanel {
         add(txtPZ3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 390, 50, -1));
         add(txtPZ4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 430, 50, -1));
 
+        jLabel17.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(33, 48, 71));
         jLabel17.setText("RESPUESTA");
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 510, -1, -1));
         add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 540, 190, -1));
 
+        jLabel18.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(33, 48, 71));
         jLabel18.setText("Puntos de Intersección");
         add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, -1, -1));
+
+        btnMaximizar.setBackground(new java.awt.Color(204, 204, 204));
+        btnMaximizar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        btnMaximizar.setForeground(new java.awt.Color(33, 48, 71));
+        btnMaximizar.setText("MAXIMIZAR");
+        btnMaximizar.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(33, 48, 71), null));
+        btnMaximizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMaximizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMaximizarActionPerformed(evt);
+            }
+        });
+        add(btnMaximizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 100, 30));
+
+        txtTipo.setBackground(new java.awt.Color(230, 230, 230));
+        txtTipo.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        txtTipo.setForeground(new java.awt.Color(33, 48, 71));
+        txtTipo.setBorder(null);
+        add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 130, 25));
+
+        jSeparator1.setBackground(new java.awt.Color(33, 48, 71));
+        jSeparator1.setForeground(new java.awt.Color(33, 48, 71));
+        jSeparator1.setOpaque(true);
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 10, 980, 2));
+
+        jSeparator2.setBackground(new java.awt.Color(33, 48, 71));
+        jSeparator2.setForeground(new java.awt.Color(33, 48, 71));
+        jSeparator2.setOpaque(true);
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 663, 980, 2));
+
+        jSeparator3.setBackground(new java.awt.Color(33, 48, 71));
+        jSeparator3.setForeground(new java.awt.Color(33, 48, 71));
+        jSeparator3.setOpaque(true);
+        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(942, -7, 2, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtPY1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPY1ActionPerformed
@@ -229,10 +293,19 @@ public class GraficaMaxi extends javax.swing.JPanel {
         txtRespuesta.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
+    private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
+        txtTipo.setText(" - MINIMIZAR");
+    }//GEN-LAST:event_btnMinimizarActionPerformed
+
+    private void btnMaximizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaximizarActionPerformed
+        txtTipo.setText(" - MAXIMIZAR");
+    }//GEN-LAST:event_btnMaximizarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton btnResolver;
+    private javax.swing.JButton btnMaximizar;
+    private javax.swing.JButton btnMinimizar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -252,6 +325,9 @@ public class GraficaMaxi extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField txtEX;
     private javax.swing.JTextField txtEY;
     private javax.swing.JTextField txtPX1;
@@ -277,5 +353,6 @@ public class GraficaMaxi extends javax.swing.JPanel {
     private javax.swing.JTextField txtRZ2;
     private javax.swing.JTextField txtRZ3;
     private javax.swing.JTextField txtRespuesta;
+    private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }

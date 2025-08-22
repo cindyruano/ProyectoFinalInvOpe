@@ -8,12 +8,12 @@ package vista;
  *
  * @author cindy
  */
-public class SimplexMaxi extends javax.swing.JPanel {
+public class MetodoSimplex extends javax.swing.JPanel {
 
     /**
      * Creates new form SimplexMaxi
      */
-    public SimplexMaxi() {
+    public MetodoSimplex() {
         initComponents();
     }
 
@@ -26,15 +26,12 @@ public class SimplexMaxi extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         txtEX1 = new javax.swing.JTextField();
         txtEX2 = new javax.swing.JTextField();
         txtX3 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         txtRX1 = new javax.swing.JTextField();
         txtRX2 = new javax.swing.JTextField();
         txtRY1 = new javax.swing.JTextField();
@@ -55,44 +52,43 @@ public class SimplexMaxi extends javax.swing.JPanel {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
-        btnResolver = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel16 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        btnMinimizar = new javax.swing.JButton();
+        btnMaximizar = new javax.swing.JButton();
+        txtTipo = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(230, 230, 230));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("MÉTODO SIMPLEX MAXIMIZACIÓN");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
-
-        jLabel2.setText("Ecuación:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         txtEX1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEX1ActionPerformed(evt);
             }
         });
-        add(txtEX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 50, -1));
-        add(txtEX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 60, -1));
-        add(txtX3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, -1, -1));
+        add(txtEX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 50, -1));
+        add(txtEX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 60, -1));
+        add(txtX3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 50, -1));
 
         jLabel3.setText("X1");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, -1, -1));
 
         jLabel4.setText("X2");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, -1, -1));
 
         jLabel5.setText("X3");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
-
-        jLabel6.setText("Restricciones");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 60, -1, 20));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, -1, -1));
         add(txtRX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 90, 40, -1));
         add(txtRX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 40, -1));
 
@@ -156,16 +152,18 @@ public class SimplexMaxi extends javax.swing.JPanel {
         add(txtRZ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 120, 50, -1));
 
         jLabel14.setText("+");
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 20, -1));
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 20, -1));
 
         jLabel15.setText("+");
-        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 20, -1));
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 20, -1));
 
+        btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
+        btnLimpiar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(33, 48, 71));
         btnLimpiar.setText("LIMPIAR");
-        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
-
-        btnResolver.setText("RESOLVER");
-        add(btnResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, -1, -1));
+        btnLimpiar.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(33, 48, 71), null));
+        btnLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 100, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -182,9 +180,6 @@ public class SimplexMaxi extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 900, 260));
 
-        jLabel16.setText("RESPUESTA");
-        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 510, -1, -1));
-
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
@@ -196,6 +191,73 @@ public class SimplexMaxi extends javax.swing.JPanel {
         jScrollPane3.setViewportView(jTextArea2);
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 540, 130, -1));
+
+        jSeparator1.setBackground(new java.awt.Color(33, 48, 71));
+        jSeparator1.setForeground(new java.awt.Color(33, 48, 71));
+        jSeparator1.setOpaque(true);
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 10, 980, 2));
+
+        jSeparator3.setBackground(new java.awt.Color(33, 48, 71));
+        jSeparator3.setForeground(new java.awt.Color(33, 48, 71));
+        jSeparator3.setOpaque(true);
+        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(942, -7, 2, 700));
+
+        jSeparator2.setBackground(new java.awt.Color(33, 48, 71));
+        jSeparator2.setForeground(new java.awt.Color(33, 48, 71));
+        jSeparator2.setOpaque(true);
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 663, 980, 2));
+
+        jLabel17.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel17.setText("MÉTODO SIMPLEX");
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, 25));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel1.setText("Ecuación:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel18.setText("Restricciones");
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 50, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(33, 48, 71));
+        jLabel19.setText("RESPUESTA");
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 510, -1, -1));
+
+        btnMinimizar.setBackground(new java.awt.Color(204, 204, 204));
+        btnMinimizar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        btnMinimizar.setForeground(new java.awt.Color(33, 48, 71));
+        btnMinimizar.setText("MINIMIZAR");
+        btnMinimizar.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(33, 48, 71), null));
+        btnMinimizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMinimizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMinimizarActionPerformed(evt);
+            }
+        });
+        add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 100, 30));
+
+        btnMaximizar.setBackground(new java.awt.Color(204, 204, 204));
+        btnMaximizar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        btnMaximizar.setForeground(new java.awt.Color(33, 48, 71));
+        btnMaximizar.setText("MAXIMIZAR");
+        btnMaximizar.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(33, 48, 71), null));
+        btnMaximizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnMaximizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMaximizarActionPerformed(evt);
+            }
+        });
+        add(btnMaximizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 100, 30));
+
+        txtTipo.setBackground(new java.awt.Color(230, 230, 230));
+        txtTipo.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        txtTipo.setForeground(new java.awt.Color(33, 48, 71));
+        txtTipo.setBorder(null);
+        add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 130, 25));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtEX1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEX1ActionPerformed
@@ -222,10 +284,19 @@ public class SimplexMaxi extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtRZ3ActionPerformed
 
+    private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
+        txtTipo.setText(" - MINIMIZAR");
+    }//GEN-LAST:event_btnMinimizarActionPerformed
+
+    private void btnMaximizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaximizarActionPerformed
+        txtTipo.setText(" - MAXIMIZAR");
+    }//GEN-LAST:event_btnMaximizarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton btnResolver;
+    private javax.swing.JButton btnMaximizar;
+    private javax.swing.JButton btnMinimizar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -233,18 +304,21 @@ public class SimplexMaxi extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
@@ -260,6 +334,7 @@ public class SimplexMaxi extends javax.swing.JPanel {
     private javax.swing.JTextField txtRZ1;
     private javax.swing.JTextField txtRZ2;
     private javax.swing.JTextField txtRZ3;
+    private javax.swing.JTextField txtTipo;
     private javax.swing.JTextField txtX3;
     // End of variables declaration//GEN-END:variables
 }

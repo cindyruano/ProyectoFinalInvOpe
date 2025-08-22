@@ -26,15 +26,15 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Colores predeterminados
-        Color bgOriginal = new Color(33, 48, 71);   // fondo normal
-        Color fgOriginal = new Color(230, 230, 230); // texto normal
+        //COLORES PREDETERMINADOS
+        Color bgOriginal = new Color(33, 48, 71);   //fondo normal
+        Color fgOriginal = new Color(230, 230, 230); //texto normal
 
-        // Colores para hover
-        Color bgHover = new Color(50, 65, 95);      // fondo más claro al pasar el mouse
-        Color fgHover = new Color(255, 255, 255);   // texto más claro al pasar el mouse
+        //COLORES PARA HOVER
+        Color bgHover = new Color(50, 65, 95);      //fondo al pasar mouse
+        Color fgHover = new Color(255, 255, 255);   //texto al pasar mouse
 
-        // Colores para click
+        //COLORES PARA CLICK
         Color bgClick = new Color(20, 30, 50);      // fondo más oscuro al presionar
         Color fgClick = new Color(200, 200, 200);   // texto al presionar
 
@@ -43,7 +43,7 @@ public class Menu extends javax.swing.JFrame {
         btnSimplex.setBackground(bgOriginal);
         btnSimplex.setForeground(fgOriginal);
 
-        // ---------------- btnGrafico ----------------
+        // ---------------- GRAFICO ----------------
         btnGrafico.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -75,7 +75,7 @@ public class Menu extends javax.swing.JFrame {
                 mostrarPanel(fondoDe, grafico);
             }
         });
-        // ---------------- btnSimplex ----------------
+        // ---------------- SIMPLEX ----------------
         btnSimplex.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -108,7 +108,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        // Eventos de los paneles
+        //PANELES
         btnGrafico.addMouseListener(
                 new java.awt.event.MouseAdapter() {
             @Override

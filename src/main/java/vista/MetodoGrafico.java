@@ -365,67 +365,18 @@ public class MetodoGrafico extends javax.swing.JPanel {
     private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
         txtTipo.setText(" - MINIMIZAR");
 
-        // Leer valores de los JTextField
+        //LEER VALORES
         double ex = Double.parseDouble(txtEX.getText());
         double ey = Double.parseDouble(txtEY.getText());
 
-        // Inicializamos variables para mínimo
+        //INICIALIZAR VARIABLES
         double minZ = Double.MAX_VALUE;
         Object xMin = null;
         Object yMin = null;
 
-        // Recorremos la tabla
+        //RECORRER TABLA
         DecimalFormat df = new DecimalFormat("#.##");
 
-        for (int i = 0; i < tblPuntosIn.getRowCount(); i++) {
-            Object xObj = tblPuntosIn.getValueAt(i, 0);
-            Object yObj = tblPuntosIn.getValueAt(i, 1);
-
-            if (xObj != null && yObj != null) {
-                double x = Double.parseDouble(xObj.toString());
-                double y = Double.parseDouble(yObj.toString());
-                double z = ex * x + ey * y; // calculamos z
-
-                // Formateamos z solo si no es entero
-                String zStr;
-                if (z == (long) z) {
-                    zStr = String.valueOf((long) z); // entero
-                } else {
-                    zStr = df.format(z); // decimal
-                }
-
-                // Guardamos z en la columna 2
-                tblPuntosIn.setValueAt(z, i, 2);
-
-                // Verificamos si es el mínimo
-                if (z < minZ) {
-                    minZ = z;
-                    xMin = x;
-                    yMin = y;
-                }
-            }
-        }
-
-        // Construimos el resultado
-        String resultado = txtEX.getText() + " (" + xMin + ") + " + txtEY.getText() + " (" + yMin + ")";
-        txtRespuesta.setText(resultado);
-    }//GEN-LAST:event_btnMinimizarActionPerformed
-
-    private void btnMaximizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaximizarActionPerformed
-        txtTipo.setText(" - MAXIMIZAR");
-
-        // Leer valores de los JTextField
-        double ex = Double.parseDouble(txtEX.getText());
-        double ey = Double.parseDouble(txtEY.getText());
-
-        // Inicializamos variables para máximo
-        double maxZ = Double.NEGATIVE_INFINITY;
-        Object xMax = null;
-        Object yMax = null;
-
-        DecimalFormat df = new DecimalFormat("#.##");
-
-        // Recorremos la tabla
         for (int i = 0; i < tblPuntosIn.getRowCount(); i++) {
             Object xObj = tblPuntosIn.getValueAt(i, 0);
             Object yObj = tblPuntosIn.getValueAt(i, 1);
@@ -435,16 +386,67 @@ public class MetodoGrafico extends javax.swing.JPanel {
                 double y = Double.parseDouble(yObj.toString());
                 double z = ex * x + ey * y;
 
-                // Formateamos z solo si no es entero
+                //z no entero
                 String zStr;
                 if (z == (long) z) {
-                    zStr = String.valueOf((long) z); // entero
+                    zStr = String.valueOf((long) z); //entero
                 } else {
-                    zStr = df.format(z); // decimal
+                    zStr = df.format(z); //decimal
                 }
 
+                //GUARDAR VALORES Z
+                tblPuntosIn.setValueAt(z, i, 2);
+
+                //VERIFICAR SI ES MINIMO
+                if (z < minZ) {
+                    minZ = z;
+                    xMin = x;
+                    yMin = y;
+                }
+            }
+        }
+
+        //RESPUESTA
+        String resultado = txtEX.getText() + " (" + xMin + ") + " + txtEY.getText() + " (" + yMin + ")";
+        txtRespuesta.setText(resultado);
+    }//GEN-LAST:event_btnMinimizarActionPerformed
+
+    private void btnMaximizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaximizarActionPerformed
+        txtTipo.setText(" - MAXIMIZAR");
+
+        //LEER VALORES
+        double ex = Double.parseDouble(txtEX.getText());
+        double ey = Double.parseDouble(txtEY.getText());
+
+        //INICIALIZAR VARIABLES
+        double maxZ = Double.NEGATIVE_INFINITY;
+        Object xMax = null;
+        Object yMax = null;
+
+        DecimalFormat df = new DecimalFormat("#.##");
+
+        //RECORRER TABLA
+        for (int i = 0; i < tblPuntosIn.getRowCount(); i++) {
+            Object xObj = tblPuntosIn.getValueAt(i, 0);
+            Object yObj = tblPuntosIn.getValueAt(i, 1);
+
+            if (xObj != null && yObj != null) {
+                double x = Double.parseDouble(xObj.toString());
+                double y = Double.parseDouble(yObj.toString());
+                double z = ex * x + ey * y;
+
+                //z no entero
+                String zStr;
+                if (z == (long) z) {
+                    zStr = String.valueOf((long) z); //entero
+                } else {
+                    zStr = df.format(z); //decimal
+                }
+
+                //GUARDAR VALORES Z
                 tblPuntosIn.setValueAt(zStr, i, 2);
 
+                //VERIFICAR SI ES MAXIMO
                 if (z > maxZ) {
                     maxZ = z;
                     xMax = x;
@@ -453,7 +455,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
             }
         }
 
-        // Construimos el resultado
+        //RESPUESTA
         String resultado = ex + " (" + xMax + ") + " + ey + " (" + yMax + ")";
         txtRespuesta.setText(resultado);
     }//GEN-LAST:event_btnMaximizarActionPerformed

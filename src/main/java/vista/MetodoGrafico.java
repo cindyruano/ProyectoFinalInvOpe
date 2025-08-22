@@ -189,7 +189,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
                 btnMinimizarActionPerformed(evt);
             }
         });
-        add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 100, 30));
+        add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 100, 30));
 
         btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
         btnLimpiar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -202,19 +202,19 @@ public class MetodoGrafico extends javax.swing.JPanel {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 510, 100, 30));
+        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 550, 100, 30));
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 590, 470));
 
         jLabel17.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(33, 48, 71));
         jLabel17.setText("RESPUESTA");
-        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, -1, -1));
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, -1, -1));
 
         txtRespuesta.setBackground(new java.awt.Color(204, 204, 204));
         txtRespuesta.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         txtRespuesta.setForeground(new java.awt.Color(33, 48, 71));
         txtRespuesta.setBorder(null);
-        add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 190, 25));
+        add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, 190, 25));
 
         jLabel18.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(33, 48, 71));
@@ -232,7 +232,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
                 btnMaximizarActionPerformed(evt);
             }
         });
-        add(btnMaximizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 100, 30));
+        add(btnMaximizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 510, 100, 30));
 
         txtTipo.setBackground(new java.awt.Color(230, 230, 230));
         txtTipo.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
@@ -269,9 +269,10 @@ public class MetodoGrafico extends javax.swing.JPanel {
                 "X", "Y", "Z"
             }
         ));
+        tblPuntosIn.setPreferredSize(new java.awt.Dimension(225, 80));
         jScrollPane1.setViewportView(tblPuntosIn);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 190, 190));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 190, 110));
 
         jLabel14.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(33, 48, 71));

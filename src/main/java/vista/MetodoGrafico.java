@@ -4,25 +4,15 @@
  */
 package vista;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.List;
 import java.awt.RenderingHints;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import javax.swing.JButton;
-import javax.swing.JLabel;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.image.BufferedImage;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-//import java.util.List;
-import java.awt.BorderLayout;
-import javax.swing.JOptionPane;
-
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -35,137 +25,21 @@ public class MetodoGrafico extends javax.swing.JPanel {
         initComponents();
     }
 
-//    private void initComponents() {
-//        setLayout(new BorderLayout());
-//
-//        // Panel superior con tabla y campos
-//        JPanel pnlSuperior = new JPanel(new BorderLayout());
-//
-//        // Modelo de tabla
-//        String[] columnas = {"X", "Y", "Signo", "Z"};
-//        Object[][] datos = {
-//            {2, 3, "<=", 9},
-//            {3, 2, "<=", 12},
-//            {1, 0, "<=", 4}
-//        };
-//        tblRestricciones = new JTable(new javax.swing.table.DefaultTableModel(datos, columnas));
-//        pnlSuperior.add(new JScrollPane(tblRestricciones), BorderLayout.CENTER);
-//
-//        // Panel de controles
-//        JPanel pnlControles = new JPanel();
-//        pnlControles.add(new JLabel("EX:"));
-//        txtEX = new JTextField("2", 5);
-//        pnlControles.add(txtEX);
-//        pnlControles.add(new JLabel("EY:"));
-//        txtEY = new JTextField("3", 5);
-//        pnlControles.add(txtEY);
-//
-//        btnMinimizar = new JButton("Graficar");
-//        pnlControles.add(btnMinimizar);
-//
-//        pnlSuperior.add(pnlControles, BorderLayout.SOUTH);
-//
-//        add(pnlSuperior, BorderLayout.NORTH);
-//
-//        // Panel de la gráfica
-//        pnlGrafica = new JPanel();
-//        pnlGrafica.setBackground(Color.WHITE);
-//        add(pnlGrafica, BorderLayout.CENTER);
-//
-//        // Acción del botón
-//        btnMinimizar.addActionListener(evt -> graficar());
-//    }
-//
-//    // 🔹 Obtiene puntos de la tabla
-//    private List<double[]> obtenerPuntos() {
-//        List<double[]> puntos = new ArrayList<>();
-//
-//        for (int i = 0; i < tblRestricciones.getRowCount(); i++) {
-//            double a = Double.parseDouble(tblRestricciones.getValueAt(i, 0).toString());
-//            double b = Double.parseDouble(tblRestricciones.getValueAt(i, 1).toString());
-//            double c = Double.parseDouble(tblRestricciones.getValueAt(i, 3).toString());
-//
-//            if (a != 0 && b != 0) {
-//                puntos.add(new double[]{c / a, 0}); // intersección con X
-//                puntos.add(new double[]{0, c / b}); // intersección con Y
-//            } else {
-//                if (a != 0 && b == 0) {
-//                    puntos.add(new double[]{c / a, 0}); // recta vertical
-//                } else if (b != 0 && a == 0) {
-//                    puntos.add(new double[]{0, c / b}); // recta horizontal
-//                }
-//            }
-//        }
-//
-//        return puntos;
-//    }
-//
-//    // 🔹 Graficar en pnlGrafica
-//    private void graficar() {
-//        try {
-//            double ex = Double.parseDouble(txtEX.getText());
-//            double ey = Double.parseDouble(txtEY.getText());
-//
-//            List<double[]> puntos = obtenerPuntos();
-//
-//            pnlGrafica.removeAll();
-//            pnlGrafica.setLayout(new BorderLayout());
-//            pnlGrafica.add(new PanelGrafico(puntos, ex, ey), BorderLayout.CENTER);
-//            pnlGrafica.revalidate();
-//            pnlGrafica.repaint();
-//
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(this, "Error en los datos: " + e.getMessage());
-//        }
-//    }
-//
-//    // 🔹 Clase interna para dibujar la gráfica
-//    private class PanelGrafico extends JPanel {
-//
-//        private List<double[]> puntos;
-//        private double ex, ey;
-//
-//        public PanelGrafico(List<double[]> puntos, double ex, double ey) {
-//            this.puntos = puntos;
-//            this.ex = ex;
-//            this.ey = ey;
-//        }
-//
-//        @Override
-//        protected void paintComponent(Graphics g) {
-//            super.paintComponent(g);
-//
-//            Graphics2D g2 = (Graphics2D) g;
-//            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-//
-//            int w = getWidth();
-//            int h = getHeight();
-//
-//            // 🔹 Dibujar ejes
-//            g2.setColor(Color.LIGHT_GRAY);
-//            g2.drawLine(0, h / 2, w, h / 2); // eje X
-//            g2.drawLine(w / 2, 0, w / 2, h); // eje Y
-//
-//            // 🔹 Escala
-//            int escala = 40;
-//
-//            // 🔹 Dibujar puntos de restricciones
-//            g2.setColor(Color.BLUE);
-//            for (double[] p : puntos) {
-//                int x = (int) (w / 2 + p[0] * escala);
-//                int y = (int) (h / 2 - p[1] * escala);
-//                g2.fillOval(x - 4, y - 4, 8, 8);
-//            }
-//
-//            // 🔹 Dibujar punto EX,EY
-//            g2.setColor(Color.RED);
-//            int px = (int) (w / 2 + ex * escala);
-//            int py = (int) (h / 2 - ey * escala);
-//            g2.fillOval(px - 5, py - 5, 10, 10);
-//
-//            g2.drawString("(" + ex + ", " + ey + ")", px + 5, py - 5);
-//        }
-//    }
+    // ---------------- Helper ----------------
+    private Double parseDouble(Object cell) {
+        if (cell == null) {
+            return null;
+        }
+        String s = cell.toString().trim();
+        if (s.isEmpty()) {
+            return null;
+        }
+        try {
+            return Double.parseDouble(s);
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -181,12 +55,8 @@ public class MetodoGrafico extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtEX = new javax.swing.JTextField();
         txtEY = new javax.swing.JTextField();
-        txtRX1 = new javax.swing.JTextField();
-        txtRX2 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
         btnMinimizar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
-        pnlGrafica = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         txtRespuesta = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
@@ -198,7 +68,6 @@ public class MetodoGrafico extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPuntosIn = new javax.swing.JTable();
         jLabel14 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -208,6 +77,10 @@ public class MetodoGrafico extends javax.swing.JPanel {
         jTextPane1 = new javax.swing.JTextPane();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblRestricciones = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblPuntos = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        Grafica = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(230, 230, 230));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -226,7 +99,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(33, 48, 71));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Restricciones");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 270, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 270, -1));
 
         txtEX.setBackground(new java.awt.Color(204, 204, 204));
         txtEX.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -242,25 +115,6 @@ public class MetodoGrafico extends javax.swing.JPanel {
         txtEY.setBorder(null);
         add(txtEY, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 50, 25));
 
-        txtRX1.setBackground(new java.awt.Color(204, 204, 204));
-        txtRX1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        txtRX1.setForeground(new java.awt.Color(33, 48, 71));
-        txtRX1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtRX1.setBorder(null);
-        add(txtRX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(625, 90, 50, 25));
-
-        txtRX2.setBackground(new java.awt.Color(204, 204, 204));
-        txtRX2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        txtRX2.setForeground(new java.awt.Color(33, 48, 71));
-        txtRX2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtRX2.setBorder(null);
-        add(txtRX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(625, 120, 50, 25));
-
-        jLabel10.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(33, 48, 71));
-        jLabel10.setText("X  +");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 30, -1));
-
         btnMinimizar.setBackground(new java.awt.Color(204, 204, 204));
         btnMinimizar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         btnMinimizar.setForeground(new java.awt.Color(33, 48, 71));
@@ -272,7 +126,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
                 btnMinimizarActionPerformed(evt);
             }
         });
-        add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 100, 30));
+        add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 510, 100, 30));
 
         btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
         btnLimpiar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -285,24 +139,23 @@ public class MetodoGrafico extends javax.swing.JPanel {
                 btnLimpiarActionPerformed(evt);
             }
         });
-        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 550, 100, 30));
-        add(pnlGrafica, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 590, 470));
+        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 590, 100, 30));
 
         jLabel17.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(33, 48, 71));
         jLabel17.setText("RESPUESTA");
-        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, -1, -1));
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, -1, -1));
 
         txtRespuesta.setBackground(new java.awt.Color(204, 204, 204));
         txtRespuesta.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         txtRespuesta.setForeground(new java.awt.Color(33, 48, 71));
         txtRespuesta.setBorder(null);
-        add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, 190, 25));
+        add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 190, 25));
 
         jLabel18.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(33, 48, 71));
         jLabel18.setText("Puntos de Intersección");
-        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 220, -1, -1));
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, -1, -1));
 
         btnMaximizar.setBackground(new java.awt.Color(204, 204, 204));
         btnMaximizar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -315,7 +168,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
                 btnMaximizarActionPerformed(evt);
             }
         });
-        add(btnMaximizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 510, 100, 30));
+        add(btnMaximizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 550, 100, 30));
 
         txtTipo.setBackground(new java.awt.Color(230, 230, 230));
         txtTipo.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
@@ -354,17 +207,12 @@ public class MetodoGrafico extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblPuntosIn);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 190, 110));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 380, 190, 110));
 
         jLabel14.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(33, 48, 71));
         jLabel14.setText("Y");
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 110, 20, 25));
-
-        jLabel19.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(33, 48, 71));
-        jLabel19.setText("X  +");
-        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, 30, -1));
 
         jLabel23.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(33, 48, 71));
@@ -407,7 +255,27 @@ public class MetodoGrafico extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(tblRestricciones);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 60, 180, 130));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, 190, 130));
+
+        tblPuntos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Punto X", "Punto Y"
+            }
+        ));
+        jScrollPane4.setViewportView(tblPuntos);
+
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 210, 190, 130));
+
+        Grafica.setPreferredSize(new java.awt.Dimension(2000, 2000));
+        jScrollPane5.setViewportView(Grafica);
+
+        add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 580, 460));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
@@ -415,14 +283,10 @@ public class MetodoGrafico extends javax.swing.JPanel {
         txtEX.setText("");
         txtEY.setText("");
 
-        //RESTRICCIONES
-        txtRX1.setText("");
-        txtRX2.setText("");
-
         //RESPUESTA
         txtRespuesta.setText("");
 
-        //TABLA
+        //TABLA PUNTOS INTERSECIÓN
         int filas = tblPuntosIn.getRowCount();
         int columnas = tblPuntosIn.getColumnCount();
 
@@ -431,9 +295,170 @@ public class MetodoGrafico extends javax.swing.JPanel {
                 tblPuntosIn.setValueAt("", i, j);
             }
         }
+
+        //TABLA RESTRICCIONES Y PUNTOS GRAFICA
+        DefaultTableModel mR = (DefaultTableModel) tblRestricciones.getModel();
+        DefaultTableModel mP = (DefaultTableModel) tblPuntos.getModel();
+
+        mR.setRowCount(0);
+        mP.setRowCount(0);
+
+        for (int i = 0; i < 3; i++) {
+            mR.addRow(new Object[]{null, null, null, null});
+        }
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
+
+        DecimalFormat df = new DecimalFormat("#.##");
+
+        //ENCONTRAR VALORES PARA GRAFICAR
+        DefaultTableModel mR = (DefaultTableModel) tblRestricciones.getModel();
+        DefaultTableModel mP = (DefaultTableModel) tblPuntos.getModel();
+        DefaultTableModel mPI = (DefaultTableModel) tblPuntosIn.getModel();
+
+        //Limpiar resultados anteriores
+        mP.setRowCount(0);
+
+        for (int i = 0; i < 3; i++) {
+            Double x = parseDouble(mR.getValueAt(i, 0));
+            Double y = parseDouble(mR.getValueAt(i, 1));
+            Double z = parseDouble(mR.getValueAt(i, 3));
+
+            if (z == null) {
+                continue;
+            }
+
+            if (i < 2) {
+                // Primeras dos filas
+                double px = (x != null && x != 0) ? z / x : 0;
+                double py = (y != null && y != 0) ? z / y : 0;
+                mP.addRow(new Object[]{df.format(px), df.format(py)});
+            } else {
+                // Última fila
+                Object valSigno = mR.getValueAt(2, 2);
+                if (valSigno == null || (!valSigno.toString().trim().equals("<")
+                        && !valSigno.toString().trim().equals(">"))) {
+                    JOptionPane.showMessageDialog(null,
+                            "En la última fila debe ingresar '<' o '>' en la columna Signo.");
+                    return;
+                }
+
+                if (x != null && Math.abs(x - 1.0) < 1e-9) {
+                    mP.addRow(new Object[]{df.format(z), df.format(0)});
+                } else if (y != null && Math.abs(y - 1.0) < 1e-9) {
+                    mP.addRow(new Object[]{df.format(0), df.format(z)});
+                } else {
+                    JOptionPane.showMessageDialog(null,
+                            "En la última fila debe ingresar 1 en X o Y y Z correspondiente.");
+                    return;
+                }
+            }
+        }
+
+        //============ GRAFICA ============
+        //Definir un tamaño grande para poder hacer scroll
+        int ancho = 2000;
+        int alto = 2000;
+        int margen = 50;
+        int escala = 20;    // cada unidad = 20 píxeles
+        int paso = 1;       // numeración cada 1 unidad
+
+        BufferedImage imagen = new BufferedImage(ancho, alto, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = imagen.createGraphics();
+
+        //Fondo blanco
+        g2.setColor(Color.WHITE);
+        g2.fillRect(0, 0, ancho, alto);
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        //Dibujar cuadrícula
+        g2.setColor(new Color(230, 230, 230));
+        for (int x = margen; x < ancho - margen; x += escala * paso) {
+            g2.drawLine(x, margen, x, alto - margen);
+        }
+        for (int y = alto - margen; y > margen; y -= escala * paso) {
+            g2.drawLine(margen, y, ancho - margen, y);
+        }
+
+        //Dibujar ejes
+        g2.setColor(Color.BLACK);
+        g2.drawLine(margen, alto - margen, ancho - margen, alto - margen); // eje X
+        g2.drawLine(margen, margen, margen, alto - margen);                // eje Y
+
+        //Flechas de ejes
+        g2.drawLine(ancho - margen, alto - margen, ancho - margen - 10, alto - margen - 5);
+        g2.drawLine(ancho - margen, alto - margen, ancho - margen - 10, alto - margen + 5);
+        g2.drawLine(margen, margen, margen - 5, margen + 10);
+        g2.drawLine(margen, margen, margen + 5, margen + 10);
+
+        //Etiquetas de los ejes
+        g2.drawString("X", ancho - margen + 15, alto - margen + 5);
+        g2.drawString("Y", margen - 15, margen - 10);
+
+        //Numeración eje X
+        g2.setFont(new Font("Arial", Font.PLAIN, 10));
+
+        for (int xVal = 0; xVal <= (ancho - 2 * margen) / escala; xVal += paso) {
+            int px = margen + xVal * escala;
+            int py = alto - margen;
+            g2.drawLine(px, py - 3, px, py + 3);
+            g2.drawString(String.valueOf(xVal), px - 5, py + 15);
+        }
+
+        //Numeración eje Y
+        for (int yVal = 0; yVal <= (alto - 2 * margen) / escala; yVal += paso) {
+            int px = margen;
+            int py = alto - margen - yVal * escala;
+            g2.drawLine(px - 3, py, px + 3, py);
+            g2.drawString(String.valueOf(yVal), px - 30, py + 5);
+        }
+
+        //Dibujar restricciones de la tabla
+        DefaultTableModel modelo = (DefaultTableModel) tblPuntos.getModel();
+        int filas = modelo.getRowCount();
+
+        for (int i = 0; i < filas; i++) {
+            Object objX = modelo.getValueAt(i, 0);
+            Object objY = modelo.getValueAt(i, 1);
+
+            if (objX == null && objY == null) {
+                continue;
+            }
+
+            int x = (objX != null && !objX.toString().isEmpty()) ? Integer.parseInt(objX.toString()) : 0;
+            int y = (objY != null && !objY.toString().isEmpty()) ? Integer.parseInt(objY.toString()) : 0;
+
+            // Caso 1: tiene interceptos en ambos ejes
+            if (x > 0 && y > 0) {
+                // (x,0)
+                int px1 = margen + x * escala;
+                int py1 = alto - margen;
+                // (0,y)
+                int px2 = margen;
+                int py2 = alto - margen - y * escala;
+
+                g2.setColor(Color.BLUE);
+                g2.drawLine(px1, py1, px2, py2);
+            } // Caso 2: línea vertical
+            else if (x > 0 && y == 0) {
+                int px = margen + x * escala;
+                g2.setColor(Color.RED);
+                g2.drawLine(px, alto - margen, px, margen);
+            } // Caso 3: línea horizontal
+            else if (y > 0 && x == 0) {
+                int py = alto - margen - y * escala;
+                g2.setColor(Color.RED);
+                g2.drawLine(margen, py, ancho - margen, py);
+            }
+        }
+
+        // === Mostrar en JLabel dentro de JScrollPane ===
+        Grafica.setIcon(new ImageIcon(imagen));
+        Grafica.setPreferredSize(new Dimension(ancho, alto));
+        Grafica.revalidate();
+
+        // Mostrar la imagen en el JLabel
         txtTipo.setText(" - MINIMIZAR");
 
         //LEER VALORES
@@ -446,8 +471,6 @@ public class MetodoGrafico extends javax.swing.JPanel {
         Object yMin = null;
 
         //RECORRER TABLA
-        DecimalFormat df = new DecimalFormat("#.##");
-
         for (int i = 0; i < tblPuntosIn.getRowCount(); i++) {
             Object xObj = tblPuntosIn.getValueAt(i, 0);
             Object yObj = tblPuntosIn.getValueAt(i, 1);
@@ -480,33 +503,158 @@ public class MetodoGrafico extends javax.swing.JPanel {
         //RESPUESTA
         String resultado = txtEX.getText() + " (" + xMin + ") + " + txtEY.getText() + " (" + yMin + ")";
         txtRespuesta.setText(resultado);
-//
-//        try {
-//            // 1️⃣ Tomamos el punto ingresado en los JTextField
-//            double puntoX = Double.parseDouble(txtEX.getText());
-//            double puntoY = Double.parseDouble(txtEY.getText());
-//
-//            // 2️⃣ Calculamos los puntos de las restricciones
-//            List<double[]> puntos = obtenerPuntos();
-//
-//            // 3️⃣ Creamos el gráfico con esos puntos y el punto (X,Y)
-//            PanelGrafico grafico = new PanelGrafico(puntos, puntoX, puntoY);
-//
-//            // 4️⃣ Limpiamos y mostramos la gráfica en pnlGrafica
-//            pnlGrafica.removeAll();
-//            pnlGrafica.setLayout(new BorderLayout());
-//            pnlGrafica.add(grafico, BorderLayout.CENTER);
-//            pnlGrafica.revalidate();
-//            pnlGrafica.repaint();
-//
-//        } catch (NumberFormatException e) {
-//            JOptionPane.showMessageDialog(this,
-//                    "Por favor ingresa valores válidos en X y Y",
-//                    "Error", JOptionPane.ERROR_MESSAGE);
-//        }
     }//GEN-LAST:event_btnMinimizarActionPerformed
 
     private void btnMaximizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaximizarActionPerformed
+
+        DecimalFormat df = new DecimalFormat("#.##");
+
+        //ENCONTRAR VALORES PARA GRAFICAR
+        DefaultTableModel mR = (DefaultTableModel) tblRestricciones.getModel();
+        DefaultTableModel mP = (DefaultTableModel) tblPuntos.getModel();
+        DefaultTableModel mPI = (DefaultTableModel) tblPuntosIn.getModel();
+
+        //Limpiar resultados anteriores
+        mP.setRowCount(0);
+
+        for (int i = 0; i < 3; i++) {
+            Double x = parseDouble(mR.getValueAt(i, 0));
+            Double y = parseDouble(mR.getValueAt(i, 1));
+            Double z = parseDouble(mR.getValueAt(i, 3));
+
+            if (z == null) {
+                continue;
+            }
+
+            if (i < 2) {
+                // Primeras dos filas
+                double px = (x != null && x != 0) ? z / x : 0;
+                double py = (y != null && y != 0) ? z / y : 0;
+                mP.addRow(new Object[]{df.format(px), df.format(py)});
+            } else {
+                // Última fila
+                Object valSigno = mR.getValueAt(2, 2);
+                if (valSigno == null || (!valSigno.toString().trim().equals("<")
+                        && !valSigno.toString().trim().equals(">"))) {
+                    JOptionPane.showMessageDialog(null,
+                            "En la última fila debe ingresar '<' o '>' en la columna Signo.");
+                    return;
+                }
+
+                if (x != null && Math.abs(x - 1.0) < 1e-9) {
+                    mP.addRow(new Object[]{df.format(z), df.format(0)});
+                } else if (y != null && Math.abs(y - 1.0) < 1e-9) {
+                    mP.addRow(new Object[]{df.format(0), df.format(z)});
+                } else {
+                    JOptionPane.showMessageDialog(null,
+                            "En la última fila debe ingresar 1 en X o Y y Z correspondiente.");
+                    return;
+                }
+            }
+        }
+
+        //============ GRAFICA ============
+        //Definir un tamaño grande para poder hacer scroll
+        int ancho = 2000;
+        int alto = 2000;
+        int margen = 50;
+        int escala = 20;    // cada unidad = 20 píxeles
+        int paso = 1;       // numeración cada 1 unidad
+
+        BufferedImage imagen = new BufferedImage(ancho, alto, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = imagen.createGraphics();
+
+        //Fondo blanco
+        g2.setColor(Color.WHITE);
+        g2.fillRect(0, 0, ancho, alto);
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        //Dibujar cuadrícula
+        g2.setColor(new Color(230, 230, 230));
+        for (int x = margen; x < ancho - margen; x += escala * paso) {
+            g2.drawLine(x, margen, x, alto - margen);
+        }
+        for (int y = alto - margen; y > margen; y -= escala * paso) {
+            g2.drawLine(margen, y, ancho - margen, y);
+        }
+
+        //Dibujar ejes
+        g2.setColor(Color.BLACK);
+        g2.drawLine(margen, alto - margen, ancho - margen, alto - margen); // eje X
+        g2.drawLine(margen, margen, margen, alto - margen);                // eje Y
+
+        //Flechas de ejes
+        g2.drawLine(ancho - margen, alto - margen, ancho - margen - 10, alto - margen - 5);
+        g2.drawLine(ancho - margen, alto - margen, ancho - margen - 10, alto - margen + 5);
+        g2.drawLine(margen, margen, margen - 5, margen + 10);
+        g2.drawLine(margen, margen, margen + 5, margen + 10);
+
+        //Etiquetas de los ejes
+        g2.drawString("X", ancho - margen + 15, alto - margen + 5);
+        g2.drawString("Y", margen - 15, margen - 10);
+
+        //Numeración eje X
+        g2.setFont(new Font("Arial", Font.PLAIN, 10));
+
+        for (int xVal = 0; xVal <= (ancho - 2 * margen) / escala; xVal += paso) {
+            int px = margen + xVal * escala;
+            int py = alto - margen;
+            g2.drawLine(px, py - 3, px, py + 3);
+            g2.drawString(String.valueOf(xVal), px - 5, py + 15);
+        }
+
+        //Numeración eje Y
+        for (int yVal = 0; yVal <= (alto - 2 * margen) / escala; yVal += paso) {
+            int px = margen;
+            int py = alto - margen - yVal * escala;
+            g2.drawLine(px - 3, py, px + 3, py);
+            g2.drawString(String.valueOf(yVal), px - 30, py + 5);
+        }
+
+        //Dibujar restricciones de la tabla
+        DefaultTableModel modelo = (DefaultTableModel) tblPuntos.getModel();
+        int filas = modelo.getRowCount();
+
+        for (int i = 0; i < filas; i++) {
+            Object objX = modelo.getValueAt(i, 0);
+            Object objY = modelo.getValueAt(i, 1);
+
+            if (objX == null && objY == null) {
+                continue;
+            }
+
+            int x = (objX != null && !objX.toString().isEmpty()) ? Integer.parseInt(objX.toString()) : 0;
+            int y = (objY != null && !objY.toString().isEmpty()) ? Integer.parseInt(objY.toString()) : 0;
+
+            // Caso 1: tiene interceptos en ambos ejes
+            if (x > 0 && y > 0) {
+                // (x,0)
+                int px1 = margen + x * escala;
+                int py1 = alto - margen;
+                // (0,y)
+                int px2 = margen;
+                int py2 = alto - margen - y * escala;
+
+                g2.setColor(Color.BLUE);
+                g2.drawLine(px1, py1, px2, py2);
+            } // Caso 2: línea vertical
+            else if (x > 0 && y == 0) {
+                int px = margen + x * escala;
+                g2.setColor(Color.RED);
+                g2.drawLine(px, alto - margen, px, margen);
+            } // Caso 3: línea horizontal
+            else if (y > 0 && x == 0) {
+                int py = alto - margen - y * escala;
+                g2.setColor(Color.RED);
+                g2.drawLine(margen, py, ancho - margen, py);
+            }
+        }
+
+        // === Mostrar en JLabel dentro de JScrollPane ===
+        Grafica.setIcon(new ImageIcon(imagen));
+        Grafica.setPreferredSize(new Dimension(ancho, alto));
+        Grafica.revalidate();
+
         txtTipo.setText(" - MAXIMIZAR");
 
         //LEER VALORES
@@ -517,8 +665,6 @@ public class MetodoGrafico extends javax.swing.JPanel {
         double maxZ = Double.NEGATIVE_INFINITY;
         Object xMax = null;
         Object yMax = null;
-
-        DecimalFormat df = new DecimalFormat("#.##");
 
         //RECORRER TABLA
         for (int i = 0; i < tblPuntosIn.getRowCount(); i++) {
@@ -557,15 +703,14 @@ public class MetodoGrafico extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Grafica;
     public javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnMaximizar;
     private javax.swing.JButton btnMinimizar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
@@ -576,18 +721,18 @@ public class MetodoGrafico extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    public javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextPane jTextPane1;
-    public javax.swing.JPanel pnlGrafica;
-    private javax.swing.JTable tblPuntosIn;
-    private transient javax.swing.JTable tblRestricciones;
+    public javax.swing.JTable tblPuntos;
+    public javax.swing.JTable tblPuntosIn;
+    public transient javax.swing.JTable tblRestricciones;
     private javax.swing.JTextField txtEX;
     private javax.swing.JTextField txtEY;
-    private javax.swing.JTextField txtRX1;
-    private javax.swing.JTextField txtRX2;
-    private javax.swing.JTextField txtRespuesta;
+    public javax.swing.JTextField txtRespuesta;
     private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }

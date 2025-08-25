@@ -100,7 +100,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(33, 48, 71));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Puntos Grafica");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 220, 190, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, 190, -1));
 
         txtEX.setBackground(new java.awt.Color(204, 204, 204));
         txtEX.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -156,7 +156,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
         jLabel18.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(33, 48, 71));
         jLabel18.setText("Puntos de Intersección");
-        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, -1, -1));
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, 190, -1));
 
         btnMaximizar.setBackground(new java.awt.Color(204, 204, 204));
         btnMaximizar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -235,7 +235,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
         jLabel8.setForeground(new java.awt.Color(33, 48, 71));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("Restricciones");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 200, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, 190, -1));
 
         tblPuntosIn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
         tblPuntosIn.setForeground(new java.awt.Color(33, 48, 71));
@@ -252,7 +252,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
         ));
         jScrollPane6.setViewportView(tblPuntosIn);
 
-        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 380, 190, 110));
+        add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 380, 190, 100));
 
         tblPuntos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -267,7 +267,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
         ));
         jScrollPane4.setViewportView(tblPuntos);
 
-        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 190, 90));
+        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 250, 190, 90));
 
         tblRestricciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -282,7 +282,7 @@ public class MetodoGrafico extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(tblRestricciones);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, 190, 130));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 190, 100));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed

@@ -70,7 +70,7 @@ public class MetodoEsquinaNoreste extends javax.swing.JPanel {
         txtTipo.setForeground(new java.awt.Color(33, 48, 71));
         txtTipo.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtTipo.setBorder(null);
-        add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 190, 25));
+        add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 190, 25));
 
         jSeparator1.setBackground(new java.awt.Color(33, 48, 71));
         jSeparator1.setForeground(new java.awt.Color(33, 48, 71));

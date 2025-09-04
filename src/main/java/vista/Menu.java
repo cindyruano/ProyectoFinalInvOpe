@@ -107,6 +107,105 @@ public class Menu extends javax.swing.JFrame {
                 mostrarPanel(fondoDe, grafico);
             }
         });
+        
+        // ---------------- COSTO MINIMO ----------------
+        btnCostoMin.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCostoMin.setBackground(bgHover);
+                btnCostoMin.setForeground(fgHover);
+            }
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCostoMin.setBackground(bgOriginal);
+                btnCostoMin.setForeground(fgOriginal);
+            }
+
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnCostoMin.setBackground(bgClick);
+                btnCostoMin.setForeground(fgClick);
+            }
+
+            @Override
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnCostoMin.setBackground(bgHover);
+                btnCostoMin.setForeground(fgHover);
+            }
+
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MetodoCostoMinimo grafico = new MetodoCostoMinimo();
+                mostrarPanel(fondoDe, grafico);
+            }
+        });
+        
+         // ---------------- ESQUINA NORESTE ----------------
+        btnEsqNor.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEsqNor.setBackground(bgHover);
+                btnEsqNor.setForeground(fgHover);
+            }
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEsqNor.setBackground(bgOriginal);
+                btnEsqNor.setForeground(fgOriginal);
+            }
+
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnEsqNor.setBackground(bgClick);
+                btnEsqNor.setForeground(fgClick);
+            }
+
+            @Override
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnEsqNor.setBackground(bgHover);
+                btnEsqNor.setForeground(fgHover);
+            }
+
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MetodoEsquinaNoreste grafico = new MetodoEsquinaNoreste();
+                mostrarPanel(fondoDe, grafico);
+            }
+        });
+        
+         // ---------------- APROXIMACIÓN VOGEL ----------------
+        btnAproVogel.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAproVogel.setBackground(bgHover);
+                btnAproVogel.setForeground(fgHover);
+            }
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAproVogel.setBackground(bgOriginal);
+                btnAproVogel.setForeground(fgOriginal);
+            }
+
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAproVogel.setBackground(bgClick);
+                btnAproVogel.setForeground(fgClick);
+            }
+
+            @Override
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnAproVogel.setBackground(bgHover);
+                btnAproVogel.setForeground(fgHover);
+            }
+
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MetodoAproVogel grafico = new MetodoAproVogel();
+                mostrarPanel(fondoDe, grafico);
+            }
+        });
 
         //PANELES
         btnGrafico.addMouseListener(
@@ -164,11 +263,22 @@ public class Menu extends javax.swing.JFrame {
         btnSimplex = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        btnCostoMin = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        btnEsqNor = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        btnAproVogel = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         fondoIz = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         fondoDe = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -179,7 +289,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("MENU");
+        jLabel3.setText("METODO");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 310, 40));
 
         jSeparator2.setBackground(new java.awt.Color(230, 230, 230));
@@ -207,35 +317,100 @@ public class Menu extends javax.swing.JFrame {
         jLabel5.setBackground(new java.awt.Color(33, 48, 71));
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(230, 230, 230));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Método Gráfico");
-        btnGrafico.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 40));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel5.setText("Gráfico");
+        btnGrafico.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 0, 210, 40));
 
         jLabel1.setForeground(new java.awt.Color(230, 230, 230));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("➤");
-        btnGrafico.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 30, 40));
+        btnGrafico.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 40));
 
         jPanel1.add(btnGrafico, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 310, 40));
 
         btnSimplex.setBackground(new java.awt.Color(33, 48, 71));
         btnSimplex.setForeground(new java.awt.Color(33, 48, 71));
+        btnSimplex.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSimplex.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setBackground(new java.awt.Color(33, 48, 71));
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(230, 230, 230));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Método Simplex");
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setText("Simplex");
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSimplex.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 40));
+        btnSimplex.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 0, 210, 40));
 
         jLabel2.setForeground(new java.awt.Color(230, 230, 230));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("➤");
-        btnSimplex.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 40, 40));
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSimplex.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 40));
 
-        jPanel1.add(btnSimplex, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 310, 40));
+        jPanel1.add(btnSimplex, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 310, 40));
+
+        btnCostoMin.setBackground(new java.awt.Color(33, 48, 71));
+        btnCostoMin.setForeground(new java.awt.Color(33, 48, 71));
+        btnCostoMin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCostoMin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setBackground(new java.awt.Color(33, 48, 71));
+        jLabel7.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(230, 230, 230));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel7.setText("Costo Minimo");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCostoMin.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 0, 210, 40));
+
+        jLabel11.setForeground(new java.awt.Color(230, 230, 230));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel11.setText("➤");
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCostoMin.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 40));
+
+        jPanel1.add(btnCostoMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 310, 40));
+
+        btnEsqNor.setBackground(new java.awt.Color(33, 48, 71));
+        btnEsqNor.setForeground(new java.awt.Color(33, 48, 71));
+        btnEsqNor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEsqNor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setBackground(new java.awt.Color(33, 48, 71));
+        jLabel14.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(230, 230, 230));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel14.setText("Esquina Noreste");
+        jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEsqNor.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 0, 210, 40));
+
+        jLabel15.setForeground(new java.awt.Color(230, 230, 230));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel15.setText("➤");
+        jLabel15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEsqNor.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 70, 40));
+
+        jPanel1.add(btnEsqNor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 310, 40));
+
+        btnAproVogel.setBackground(new java.awt.Color(33, 48, 71));
+        btnAproVogel.setForeground(new java.awt.Color(33, 48, 71));
+        btnAproVogel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAproVogel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setBackground(new java.awt.Color(33, 48, 71));
+        jLabel16.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(230, 230, 230));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel16.setText("Apro. Vogel");
+        jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAproVogel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 0, 210, 40));
+
+        jLabel17.setForeground(new java.awt.Color(230, 230, 230));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel17.setText("➤");
+        jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAproVogel.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 40));
+
+        jPanel1.add(btnAproVogel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 310, 40));
 
         jLabel10.setBackground(new java.awt.Color(33, 48, 71));
         jLabel10.setOpaque(true);
@@ -260,6 +435,14 @@ public class Menu extends javax.swing.JFrame {
         fondoIz.setBackground(new java.awt.Color(33, 48, 71));
         fondoIz.setOpaque(true);
         jPanel1.add(fondoIz, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 680));
+
+        jLabel12.setBackground(new java.awt.Color(230, 230, 230));
+        jLabel12.setOpaque(true);
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 0, 60, 680));
+
+        jLabel13.setBackground(new java.awt.Color(230, 230, 230));
+        jLabel13.setOpaque(true);
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 60, 680));
 
         fondoDe.setBackground(new java.awt.Color(230, 230, 230));
         fondoDe.setOpaque(true);
@@ -315,17 +498,28 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel btnAproVogel;
+    private javax.swing.JPanel btnCostoMin;
+    private javax.swing.JPanel btnEsqNor;
     private javax.swing.JPanel btnGrafico;
     private javax.swing.JPanel btnSimplex;
     private javax.swing.JLabel fondoDe;
     private javax.swing.JLabel fondoIz;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    public javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    public javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel4;
     public javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

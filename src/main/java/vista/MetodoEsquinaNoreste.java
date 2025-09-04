@@ -38,7 +38,7 @@ public class MetodoEsquinaNoreste extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(33, 48, 71));
-        jLabel2.setText("MÉTODO GRÁFICO ");
+        jLabel2.setText("MÉTODO ESQUINA NORESTE ");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, 25));
 
         btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));

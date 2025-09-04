@@ -358,7 +358,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(230, 230, 230));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setText("Costo Minimo");
+        jLabel7.setText("Costo Mínimo");
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCostoMin.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 0, 210, 40));
 
@@ -516,7 +516,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel4;
     public javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     public javax.swing.JLabel jLabel7;

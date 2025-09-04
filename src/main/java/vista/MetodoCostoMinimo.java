@@ -4,8 +4,15 @@
  */
 package vista;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,6 +24,11 @@ public class MetodoCostoMinimo extends javax.swing.JPanel {
         initComponents();
     }
 
+    // Variables globales en tu clase
+    private java.util.List<Integer> columnasColoreadas = new ArrayList<>();
+    private java.util.List<Integer> filasColoreadas = new ArrayList<>();
+    private int contadorAsignaciones = 0; // contador global de asignaciones
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -27,7 +39,7 @@ public class MetodoCostoMinimo extends javax.swing.JPanel {
         btnDF = new javax.swing.JButton();
         btnFI = new javax.swing.JButton();
         btnCalcular = new javax.swing.JButton();
-        btnLimpiar2 = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
         txtDemanda = new javax.swing.JTextField();
         txtTipo = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
@@ -38,11 +50,11 @@ public class MetodoCostoMinimo extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtRespuesta1 = new javax.swing.JTextField();
+        txtRespuesta = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        Resultados = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
 
@@ -104,24 +116,30 @@ public class MetodoCostoMinimo extends javax.swing.JPanel {
         });
         add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, 100, 30));
 
-        btnLimpiar2.setBackground(new java.awt.Color(204, 204, 204));
-        btnLimpiar2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        btnLimpiar2.setForeground(new java.awt.Color(33, 48, 71));
-        btnLimpiar2.setText("LIMPIAR");
-        btnLimpiar2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(33, 48, 71), null));
-        btnLimpiar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnLimpiar2.addActionListener(new java.awt.event.ActionListener() {
+        btnLimpiar.setBackground(new java.awt.Color(204, 204, 204));
+        btnLimpiar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(33, 48, 71));
+        btnLimpiar.setText("LIMPIAR");
+        btnLimpiar.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(33, 48, 71), null));
+        btnLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiar2ActionPerformed(evt);
+                btnLimpiarActionPerformed(evt);
             }
         });
-        add(btnLimpiar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, 100, 30));
+        add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, 100, 30));
 
         txtDemanda.setBackground(new java.awt.Color(204, 204, 204));
         txtDemanda.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         txtDemanda.setForeground(new java.awt.Color(33, 48, 71));
+        txtDemanda.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtDemanda.setBorder(null);
-        add(txtDemanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 100, 30));
+        txtDemanda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDemandaActionPerformed(evt);
+            }
+        });
+        add(txtDemanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 155, 100, 25));
 
         txtTipo.setBackground(new java.awt.Color(230, 230, 230));
         txtTipo.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
@@ -167,11 +185,13 @@ public class MetodoCostoMinimo extends javax.swing.JPanel {
         jLabel3.setOpaque(true);
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 650, 150, 40));
 
-        txtRespuesta1.setBackground(new java.awt.Color(204, 204, 204));
-        txtRespuesta1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-        txtRespuesta1.setForeground(new java.awt.Color(33, 48, 71));
-        txtRespuesta1.setBorder(null);
-        add(txtRespuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 430, 130, 25));
+        txtRespuesta.setBackground(new java.awt.Color(204, 204, 204));
+        txtRespuesta.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        txtRespuesta.setForeground(new java.awt.Color(33, 48, 71));
+        txtRespuesta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtRespuesta.setBorder(null);
+        txtRespuesta.setVerifyInputWhenFocusTarget(false);
+        add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 430, 130, 25));
 
         tblDatos.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
         tblDatos.setForeground(new java.awt.Color(33, 48, 71));
@@ -190,9 +210,10 @@ public class MetodoCostoMinimo extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 710, 170));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
+        Resultados.setColumns(20);
+        Resultados.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
+        Resultados.setRows(5);
+        jScrollPane3.setViewportView(Resultados);
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 340, 210));
 
@@ -205,10 +226,10 @@ public class MetodoCostoMinimo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDFActionPerformed
-        
+
         // Mostrar la imagen en el JLabel
         txtTipo.setText(" - DEMANDA FICTISIA");
-        
+
         String demandaTexto = txtDemanda.getText().trim();
         if (demandaTexto.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Ingrese un número de demandas");
@@ -264,14 +285,147 @@ public class MetodoCostoMinimo extends javax.swing.JPanel {
     }//GEN-LAST:event_btnDFActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        DefaultTableModel model = (DefaultTableModel) tblDatos.getModel();
+        int numRows = model.getRowCount();
+        int numCols = model.getColumnCount();
 
+        // Limpiar JTextArea y txtRespuesta
+        Resultados.setText("");
+        txtRespuesta.setText("");
+
+        // Determinar si hay columna DF
+        boolean tieneDF = false;
+        int indiceDF = -1;
+        for (int c = 0; c < numCols; c++) {
+            if ("DF".equals(model.getColumnName(c))) {
+                tieneDF = true;
+                indiceDF = c;
+                break;
+            }
+        }
+
+        // Reiniciar listas y contador
+        columnasColoreadas.clear();
+        filasColoreadas.clear();
+        contadorAsignaciones = 0;
+
+        boolean continuar = true;
+
+        while (continuar) {
+            int minVal = Integer.MAX_VALUE;
+            int minRow = -1;
+            int minCol = -1;
+
+            // --- Buscar valor mínimo disponible ---
+            for (int i = 0; i < numRows - 1; i++) { // filas de suministro
+                int oferta = Integer.parseInt(model.getValueAt(i, numCols - 1).toString());
+                if (oferta == 0) {
+                    continue;
+                }
+
+                for (int j = 1; j < numCols - 1; j++) { // columnas D
+                    if (tieneDF && j == indiceDF) {
+                        continue; // omitir DF en búsqueda de mínimo
+                    }
+                    int demanda = Integer.parseInt(model.getValueAt(numRows - 1, j).toString());
+                    if (demanda == 0) {
+                        continue;
+                    }
+
+                    int val = Integer.parseInt(model.getValueAt(i, j).toString().split(",")[0]);
+                    if (val < minVal) {
+                        minVal = val;
+                        minRow = i;
+                        minCol = j;
+                    }
+                }
+            }
+
+            // Si no hay más mínimos válidos, salir del ciclo
+            if (minRow == -1 || minCol == -1) {
+                continuar = false;
+                break;
+            }
+
+            // --- Obtener oferta y demanda ---
+            int oferta = Integer.parseInt(model.getValueAt(minRow, numCols - 1).toString());
+            int demanda = Integer.parseInt(model.getValueAt(numRows - 1, minCol).toString());
+            int resta = Math.min(oferta, demanda); // calcular valor de resta
+
+            // --- Actualizar Oferta/Demanda ---
+            if (oferta > demanda) {
+                model.setValueAt(oferta - demanda, minRow, numCols - 1);
+                model.setValueAt(0, numRows - 1, minCol);
+                columnasColoreadas.add(minCol);
+            } else {
+                model.setValueAt(0, minRow, numCols - 1);
+                model.setValueAt(demanda - oferta, numRows - 1, minCol);
+                filasColoreadas.add(minRow);
+            }
+
+            // --- Actualizar celda mínima ---
+            contadorAsignaciones++;
+            Object valorOriginal = model.getValueAt(minRow, minCol);
+            String base = valorOriginal.toString().split(",")[0];
+            model.setValueAt(base + "," + contadorAsignaciones, minRow, minCol);
+
+            // --- Mostrar en JTextArea ---
+            String filaColumna = " S" + (minRow + 1);
+            int resultado = minVal * resta;
+
+            if (Resultados.getText().isEmpty()) {
+                Resultados.append("\n"); // fila de espacio
+            }
+            Resultados.append(filaColumna + " -> " + minVal + " * " + resta + " = " + resultado + "\n");
+        }
+
+        // --- Sumamos los resultados del JTextArea ---
+        int sumaTotal = 0;
+        String[] lineas = Resultados.getText().split("\\n");
+        for (String linea : lineas) {
+            if (linea.contains("=")) {
+                try {
+                    sumaTotal += Integer.parseInt(linea.split("=")[1].trim());
+                } catch (NumberFormatException e) {
+                }
+            }
+        }
+
+        // Configurar formato con coma como separador de miles
+        DecimalFormatSymbols simbolos = new DecimalFormatSymbols();
+        simbolos.setGroupingSeparator(','); // fuerza coma
+        DecimalFormat formato = new DecimalFormat("#,###", simbolos);
+
+        txtRespuesta.setText("Q " + formato.format(sumaTotal));
+
+        // --- Forzar repintado para aplicar renderer --- 
+        tblDatos.repaint();
+
+        // --- Renderer para colorear múltiples filas y columnas --- 
+        tblDatos.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value,
+                    boolean isSelected, boolean hasFocus, int row, int column) {
+
+                Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                c.setBackground(Color.WHITE);
+                c.setForeground(Color.BLACK);
+                if (filasColoreadas.contains(row)) {
+                    c.setBackground(Color.YELLOW);
+                }
+                if (columnasColoreadas.contains(column)) {
+                    c.setBackground(Color.CYAN);
+                }
+                return c;
+            }
+        });
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void btnFIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFIActionPerformed
-       
+
         // Mostrar la imagen en el JLabel
         txtTipo.setText(" - FORMA INICIAL");
-        
+
         String demandaTexto = txtDemanda.getText().trim();
         if (demandaTexto.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Ingrese un número de demandas");
@@ -325,16 +479,47 @@ public class MetodoCostoMinimo extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnFIActionPerformed
 
-    private void btnLimpiar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiar2ActionPerformed
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+
+        // Limpiar JTextArea
+        Resultados.setText("");
+
+        // Limpiar JTable (solo valores, mantener columnas)
+        DefaultTableModel model = (DefaultTableModel) tblDatos.getModel();
+        int numRows = model.getRowCount();
+        int numCols = model.getColumnCount();
+
+        // Recorrer todas las celdas y poner vacías
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numCols; j++) {
+                model.setValueAt("", i, j);
+            }
+        }
+
+        // Reiniciar listas y contador globales
+        columnasColoreadas.clear();
+        filasColoreadas.clear();
+        contadorAsignaciones = 0;
+
+        // Forzar repintado
+        tblDatos.repaint();
+
+        // Demanda y Respuesta 
+        txtRespuesta.setText("");
+        txtDemanda.setText("");
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void txtDemandaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDemandaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLimpiar2ActionPerformed
+    }//GEN-LAST:event_txtDemandaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea Resultados;
     private javax.swing.JButton btnCalcular;
     public javax.swing.JButton btnDF;
     public javax.swing.JButton btnFI;
-    public javax.swing.JButton btnLimpiar2;
+    public javax.swing.JButton btnLimpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -349,11 +534,10 @@ public class MetodoCostoMinimo extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextPane jTextPane1;
     public javax.swing.JTable tblDatos;
     private javax.swing.JTextField txtDemanda;
-    private javax.swing.JTextField txtRespuesta1;
+    private javax.swing.JTextField txtRespuesta;
     private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,8 +4,11 @@
  */
 package vista;
 
+import Controlador.Controlador_Noroeste;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -16,6 +19,7 @@ public class MetodoEsquinaNoreste extends javax.swing.JPanel {
 
     public MetodoEsquinaNoreste() {
         initComponents();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -45,6 +49,8 @@ public class MetodoEsquinaNoreste extends javax.swing.JPanel {
         btnLimpiar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
+        btnDF3 = new javax.swing.JButton();
+        btnFI = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(230, 230, 230));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -197,6 +203,32 @@ public class MetodoEsquinaNoreste extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblDatos);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 710, 170));
+
+        btnDF3.setBackground(new java.awt.Color(204, 204, 204));
+        btnDF3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        btnDF3.setForeground(new java.awt.Color(33, 48, 71));
+        btnDF3.setText("DEMANDA FINAL");
+        btnDF3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(33, 48, 71), null));
+        btnDF3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDF3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDFActionPerformed(evt);
+            }
+        });
+        add(btnDF3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 130, 30));
+
+        btnFI.setBackground(new java.awt.Color(204, 204, 204));
+        btnFI.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        btnFI.setForeground(new java.awt.Color(33, 48, 71));
+        btnFI.setText("FORMA INICIAL");
+        btnFI.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(33, 48, 71), null));
+        btnFI.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFIActionPerformed(evt);
+            }
+        });
+        add(btnFI, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 130, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtTipo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipo1ActionPerformed
@@ -243,10 +275,132 @@ public class MetodoEsquinaNoreste extends javax.swing.JPanel {
         txtDemanda.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
+    private void btnDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDFActionPerformed
+
+        // Mostrar la imagen en el JLabel
+        txtTipo.setText(" - DEMANDA FICTISIA");
+
+        String demandaTexto = txtDemanda.getText().trim();
+        if (demandaTexto.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese un número de demandas");
+            return;
+        }
+
+        int numDemandas;
+        try {
+            numDemandas = Integer.parseInt(demandaTexto);
+            if (numDemandas <= 0) {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese un número válido mayor que 0");
+            return;
+        }
+
+        // --- Construir nombres de columnas ---
+        String[] columnas = new String[numDemandas + 3]; // +3: Suministro, DF, Oferta
+        columnas[0] = "Suministro";
+        for (int i = 1; i <= numDemandas; i++) {
+            columnas[i] = "D" + i;
+        }
+        columnas[columnas.length - 2] = "DF";       // Penúltima columna
+        columnas[columnas.length - 1] = "Oferta";   // Última columna
+
+        // --- Crear modelo vacío ---
+        javax.swing.table.DefaultTableModel modelo = new javax.swing.table.DefaultTableModel(columnas, 0);
+        tblDatos.setModel(modelo);
+
+        // --- Agregar filas de Suministro ---
+        for (int i = 1; i < numDemandas; i++) { // desde 1 hasta numDemandas-1
+            Object[] fila = new Object[columnas.length];
+            fila[0] = "Suministro " + i;
+            modelo.addRow(fila);
+        }
+
+        // --- Agregar fila de Demanda ---
+        Object[] filaDemanda = new Object[columnas.length];
+        filaDemanda[0] = "Demanda";
+        modelo.addRow(filaDemanda);
+
+        // --- Ajustar ancho de columnas ---
+        tblDatos.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        javax.swing.table.TableColumnModel columnModel = tblDatos.getColumnModel();
+        for (int i = 0; i < columnModel.getColumnCount(); i++) {
+            if (i == 0 || i == columnModel.getColumnCount() - 1 || i == columnModel.getColumnCount() - 2) {
+                columnModel.getColumn(i).setPreferredWidth(100); // Suministro, DF y Oferta
+            } else {
+                columnModel.getColumn(i).setPreferredWidth(80);  // Demanda
+            }
+        }
+    }//GEN-LAST:event_btnDFActionPerformed
+
+    private void btnFIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFIActionPerformed
+
+        // Mostrar la imagen en el JLabel
+        txtTipo.setText(" - FORMA INICIAL");
+
+        String demandaTexto = txtDemanda.getText().trim();
+        if (demandaTexto.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese un número de demandas");
+            return;
+        }
+
+        int numDemandas;
+        try {
+            numDemandas = Integer.parseInt(demandaTexto);
+            if (numDemandas <= 0) {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese un número válido mayor que 0");
+            return;
+        }
+
+        // --- Construir nombres de columnas ---
+        String[] columnas = new String[numDemandas + 2]; // +2 por Suministro y Oferta
+        columnas[0] = "Suministro";
+        for (int i = 1; i <= numDemandas; i++) {
+            columnas[i] = "D" + i;
+        }
+        columnas[columnas.length - 1] = "Oferta";
+
+        // --- Crear modelo vacío ---
+        javax.swing.table.DefaultTableModel modelo = new javax.swing.table.DefaultTableModel(columnas, 0);
+        tblDatos.setModel(modelo);
+
+        // --- Agregar filas de Suministro ---
+        for (int i = 1; i < numDemandas; i++) { // desde 1 hasta numDemandas-1
+            Object[] fila = new Object[columnas.length];
+            fila[0] = "Suministro " + i;
+            modelo.addRow(fila);
+        }
+
+        // --- Agregar fila de Demanda ---
+        Object[] filaDemanda = new Object[columnas.length];
+        filaDemanda[0] = "Demanda";
+        modelo.addRow(filaDemanda);
+
+        // --- Ajustar ancho de columnas ---
+        tblDatos.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        javax.swing.table.TableColumnModel columnModel = tblDatos.getColumnModel();
+        for (int i = 0; i < columnModel.getColumnCount(); i++) {
+            if (i == 0 || i == columnModel.getColumnCount() - 1) {
+                columnModel.getColumn(i).setPreferredWidth(100); // Suministro y Oferta
+            } else {
+                columnModel.getColumn(i).setPreferredWidth(80);  // Demanda
+            }
+        }
+    }//GEN-LAST:event_btnFIActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea Resultados;
+    public javax.swing.JTextArea Resultados;
     private javax.swing.JButton btnCalcular;
+    public javax.swing.JButton btnDF;
+    public javax.swing.JButton btnDF1;
+    public javax.swing.JButton btnDF2;
+    private javax.swing.JButton btnDF3;
+    private javax.swing.JButton btnFI;
     public javax.swing.JButton btnLimpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
@@ -265,7 +419,7 @@ public class MetodoEsquinaNoreste extends javax.swing.JPanel {
     private javax.swing.JTextPane jTextPane1;
     public javax.swing.JTable tblDatos;
     private javax.swing.JTextField txtDemanda;
-    private javax.swing.JTextField txtRespuesta;
+    public javax.swing.JTextField txtRespuesta;
     private javax.swing.JTextField txtTipo;
     private javax.swing.JTextField txtTipo1;
     // End of variables declaration//GEN-END:variables
